@@ -411,7 +411,7 @@ const AddUserForm = withFormik({
   async handleSubmit(values, { props, setErrors, setSubmitting, resetForm }) {
     try {
       const { addUser, onAddUser, token, history } = props;
-      let data = values;
+      let data = { ...values };
 
       data.date_of_birth = values.date_of_birth.toISOString();
       data.blood_group = values.selectedBloodGroup.value;
@@ -420,8 +420,8 @@ const AddUserForm = withFormik({
       data.madrasa = values.selectedMadrasa.value;
       data.place = values.selectedLocation.value;
 
-      if (values.date_of_birth) {
-        data.date_of_birth = values.date_of_birth.split('T')[0];
+      if (data.date_of_birth) {
+        data.date_of_birth = data.date_of_birth.split('T')[0];
       }
 
       if (values.last_donated_on) {
@@ -449,7 +449,6 @@ const AddUserForm = withFormik({
     } catch (err) {
       console.log(err);
     }
-    setSubmitting();
   },
 })(UserFormComponent);
 

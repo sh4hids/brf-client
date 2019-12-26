@@ -28,8 +28,6 @@ const apiService = () => next => action => {
   let url = `${baseUrl}${path}`;
   const csrf = Auth.getCsrfToken();
 
-  console.log(url);
-
   if (action.type === types.LOGIN) {
     url = `${config.server}${path}`;
   }

@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Select from 'react-select';
-import AsyncSelect from 'react-select/lib/Async';
+import AsyncSelect from 'react-select/async';
 import styled from 'styled-components';
 import { space, height } from 'styled-system';
 import { Text } from '../kits';
