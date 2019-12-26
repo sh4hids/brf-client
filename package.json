@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "awesome-debounce-promise": "^2.1.0",
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "cookie": "^0.3.1",
     "date-fns": "^2.0.0-alpha.27",
     "formik": "^1.5.2",
@@ -29,11 +29,13 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "aws s3 sync build/ s3://brf-client-test --profile personal",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build"
   },
   "proxy": "http://localhost:8000/",
+  "homepage": "http://apps.shahid.pro/brf-client",
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -44,6 +46,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "gh-pages": "^2.1.1",
     "redux-devtools-extension": "^2.13.8",
     "styled-components-grid": "^2.2.2"
   }

@@ -9,7 +9,12 @@ import bgImage from '../../assets/images/bg.svg';
 const HomePage = () => (
   <FullpageBg imgSrc={bgImage} height={`100vh`}>
     <DefaultLayout>
-      <CustomGrid valign="center" halign="justify-center" height={`100vh`}>
+      <CustomGrid
+        valign="center"
+        halign="justify-center"
+        height={`100vh`}
+        p={[3, 0, 0]}
+      >
         <CustomGrid.Unit size={{ xs: 1, sm: 1 / 3 }}>
           <IntroSection />
         </CustomGrid.Unit>

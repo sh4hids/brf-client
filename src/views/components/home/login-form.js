@@ -12,7 +12,7 @@ class LoginFormComponent extends Component {
 
     return (
       <Form>
-        <Container variant="card" p={24} width={320}>
+        <Container variant="card" p={24} maxWidth={320}>
           <InputContainer
             border="none"
             borderBottom="1px solid #FF7275"
@@ -71,6 +71,7 @@ const LoginForm = withFormik({
     try {
       const { login } = props;
       const { username, password } = values;
+      console.log(values);
       await login({ username, password });
 
       setSubmitting();

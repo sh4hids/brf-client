@@ -1,11 +1,10 @@
 import fetch from '../utils/axios';
-import config from '../config';
+import * as config from '../config';
 import * as types from '../state/ducks/auth/types';
 import AuthService from './auth-service';
 
 const Auth = new AuthService();
-const env = process.env.NODE_ENV || 'development';
-const baseUrl = `${config[env].server}${config[env].api}`;
+const baseUrl = `${config.server}${config.apiVersion}`;
 const loginActions = [
   types.LOGIN,
   types.SIGNUP,
@@ -29,8 +28,10 @@ const apiService = () => next => action => {
   let url = `${baseUrl}${path}`;
   const csrf = Auth.getCsrfToken();
 
+  console.log(url);
+
   if (action.type === types.LOGIN) {
-    url = `${config[env].server}${path}`;
+    url = `${config.server}${path}`;
   }
 
   return fetch({ url, method, body, type, token, csrf }).then(

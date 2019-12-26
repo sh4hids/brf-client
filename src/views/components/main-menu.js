@@ -5,7 +5,6 @@ import styled, { css } from 'styled-components';
 import { authActions } from '../../state/ducks/auth';
 
 import AccountPlusIcon from 'mdi-react/AccountPlusIcon';
-import ChartBarIcon from 'mdi-react/ChartBarIcon';
 import DomainIcon from 'mdi-react/DomainIcon';
 import HomeIcon from 'mdi-react/HomeIcon';
 import HospitalIcon from 'mdi-react/HospitalIcon';
