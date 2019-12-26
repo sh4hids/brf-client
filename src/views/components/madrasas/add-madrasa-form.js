@@ -9,6 +9,7 @@ import { generateSelectOptions } from '../../../utils/select-option-utils';
 
 import {
   Button,
+  Box,
   Container,
   CustomGrid,
   InputContainer,
@@ -58,7 +59,7 @@ class UserFormComponent extends Component {
       <Container width={600} m="0 auto">
         <Form>
           <CustomGrid>
-            <CustomGrid.Unit size={{ xs: 1, sm: 1 }}>
+            <Box width={{ xs: 1, sm: 1 }}>
               <Container pl={8} pr={8}>
                 <Text variant="caption">Madrasa Name</Text>
                 <InputContainer mb={16} mt={8}>
@@ -70,9 +71,9 @@ class UserFormComponent extends Component {
                   </Text>
                 )}
               </Container>
-            </CustomGrid.Unit>
+            </Box>
 
-            <CustomGrid.Unit size={{ xs: 1, sm: 1 / 2 }}>
+            <Box width={{ xs: 1, sm: 1 / 2 }}>
               <Container pl={8} pr={8}>
                 <Text variant="caption">Location</Text>
                 <SelectInput
@@ -89,9 +90,9 @@ class UserFormComponent extends Component {
                   size={{ height: 40 }}
                 />
               </Container>
-            </CustomGrid.Unit>
+            </Box>
 
-            <CustomGrid.Unit size={{ xs: 1, sm: 1 / 2 }}>
+            <Box width={{ xs: 1, sm: 1 / 2 }}>
               <Container pl={8} pr={8}>
                 <Text variant="caption">Address</Text>
                 <InputContainer mb={16} mt={8}>
@@ -107,9 +108,9 @@ class UserFormComponent extends Component {
                   </Text>
                 )}
               </Container>
-            </CustomGrid.Unit>
+            </Box>
 
-            <CustomGrid.Unit size={{ xs: 1, sm: 1 / 2 }}>
+            <Box width={{ xs: 1, sm: 1 / 2 }}>
               <Container pl={8} pr={8}>
                 <Text variant="caption">Mobile</Text>
                 <InputContainer mb={16} mt={8}>
@@ -125,9 +126,9 @@ class UserFormComponent extends Component {
                   </Text>
                 )}
               </Container>
-            </CustomGrid.Unit>
+            </Box>
 
-            <CustomGrid.Unit size={{ xs: 1, sm: 1 / 2 }}>
+            <Box width={{ xs: 1, sm: 1 / 2 }}>
               <Container pl={8} pr={8}>
                 <Text variant="caption">Contact Person</Text>
                 <InputContainer mb={16} mt={8}>
@@ -143,9 +144,9 @@ class UserFormComponent extends Component {
                   </Text>
                 )}
               </Container>
-            </CustomGrid.Unit>
+            </Box>
 
-            <CustomGrid.Unit size={{ xs: 1 / 2, sm: 1 / 2 }}>
+            <Box width={{ xs: 1 / 2, sm: 1 / 2 }}>
               <Container pl={8} pr={8}>
                 <Button
                   mt={24}
@@ -155,15 +156,15 @@ class UserFormComponent extends Component {
                   Cancel
                 </Button>
               </Container>
-            </CustomGrid.Unit>
+            </Box>
 
-            <CustomGrid.Unit size={{ xs: 1 / 2, sm: 1 / 2 }}>
+            <Box width={{ xs: 1 / 2, sm: 1 / 2 }}>
               <Container pl={8} pr={8}>
                 <Button type="submit" variant="primary" mt={24}>
                   Add Madrasa
                 </Button>
               </Container>
-            </CustomGrid.Unit>
+            </Box>
           </CustomGrid>
         </Form>
       </Container>

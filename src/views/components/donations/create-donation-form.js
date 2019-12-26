@@ -10,6 +10,7 @@ import { generateSelectOptions } from '../../../utils/select-option-utils';
 
 import {
   Button,
+  Box,
   Container,
   CustomGrid,
   InputContainer,
@@ -102,7 +103,7 @@ class CreateDonationFormComponent extends Component {
       <Container>
         <Form>
           <CustomGrid>
-            <CustomGrid.Unit size={{ xs: 1, sm: 1 / 3 }}>
+            <Box width={{ xs: 1, sm: 1 / 3 }}>
               <Container pl={8} pr={8}>
                 <Text variant="caption">Request for</Text>
                 <SelectInput
@@ -119,15 +120,15 @@ class CreateDonationFormComponent extends Component {
                   size={{ height: 40 }}
                 />
               </Container>
-            </CustomGrid.Unit>
+            </Box>
 
-            <CustomGrid.Unit size={{ xs: 1, sm: 1 / 12 }}>
+            <Box width={{ xs: 1, sm: 1 / 12 }}>
               <Text pt={32} textAlign="center">
                 or
               </Text>
-            </CustomGrid.Unit>
+            </Box>
 
-            <CustomGrid.Unit size={{ xs: 1, sm: 1 / 4 }}>
+            <Box width={{ xs: 1, sm: 1 / 4 }}>
               <Container mr={16}>
                 <Button
                   variant="primary"
@@ -139,9 +140,9 @@ class CreateDonationFormComponent extends Component {
                   Add User
                 </Button>
               </Container>
-            </CustomGrid.Unit>
+            </Box>
 
-            <CustomGrid.Unit size={{ xs: 1, sm: 1 / 3 }}>
+            <Box width={{ xs: 1, sm: 1 / 3 }}>
               <Container pl={8} pr={8}>
                 <Text variant="caption">Request date</Text>
                 <StyledDatepicker
@@ -162,9 +163,9 @@ class CreateDonationFormComponent extends Component {
                   margin={{ mt: 8 }}
                 />
               </Container>
-            </CustomGrid.Unit>
+            </Box>
 
-            <CustomGrid.Unit size={{ xs: 1, sm: 1 }}>
+            <Box width={{ xs: 1, sm: 1 }}>
               <Container pl={8} pr={8} mt={16}>
                 <Text variant="caption">Reason</Text>
                 <InputContainer mb={16} mt={8} height={100}>
@@ -180,9 +181,9 @@ class CreateDonationFormComponent extends Component {
                   </Text>
                 )}
               </Container>
-            </CustomGrid.Unit>
+            </Box>
 
-            <CustomGrid.Unit size={{ xs: 1 / 2, sm: 1 / 2 }}>
+            <Box width={{ xs: 1 / 2, sm: 1 / 2 }}>
               <Container pl={8} pr={8}>
                 <Button
                   mt={30}
@@ -193,9 +194,9 @@ class CreateDonationFormComponent extends Component {
                   Clear
                 </Button>
               </Container>
-            </CustomGrid.Unit>
+            </Box>
 
-            <CustomGrid.Unit size={{ xs: 1 / 2, sm: 1 / 2 }}>
+            <Box width={{ xs: 1 / 2, sm: 1 / 2 }}>
               <Container pl={8} pr={8}>
                 <Button
                   type="submit"
@@ -206,7 +207,7 @@ class CreateDonationFormComponent extends Component {
                   Make Request
                 </Button>
               </Container>
-            </CustomGrid.Unit>
+            </Box>
           </CustomGrid>
         </Form>
         <Modal

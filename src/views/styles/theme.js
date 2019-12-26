@@ -70,11 +70,5 @@ export default {
     placeholder: '#A9AEB1',
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256],
-  breakpoints: {
-    xs: 0,
-    sm: 576,
-    md: 768,
-    lg: 992,
-    xl: 1200,
-  },
+  breakpoints: [0, '576px', '768px', '992px', '1200px'],
 };

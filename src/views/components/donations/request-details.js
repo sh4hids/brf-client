@@ -8,6 +8,7 @@ import * as Yup from 'yup';
 import { SelectInput, StyledDatepicker } from '../';
 import {
   Button,
+  Box,
   Container,
   CustomGrid,
   Devider,
@@ -121,7 +122,7 @@ class RequestDetailsContent extends Component {
             ) : (
               <Form>
                 <CustomGrid mb={16}>
-                  <CustomGrid.Unit size={{ xs: 1 }}>
+                  <Box width={{ xs: 1 }}>
                     <Text mb={8}>Select Donor:</Text>
                     <SelectInput
                       async
@@ -138,8 +139,8 @@ class RequestDetailsContent extends Component {
                       margin={{ mt: 8 }}
                       size={{ height: 40 }}
                     />
-                  </CustomGrid.Unit>
-                  <CustomGrid.Unit size={{ xs: 1 }}>
+                  </Box>
+                  <Box width={{ xs: 1 }}>
                     <Text mb={8}>Donation Date:</Text>
                     <StyledDatepicker
                       keyName="donation_date"
@@ -158,7 +159,7 @@ class RequestDetailsContent extends Component {
                       className="date-picker"
                       margin={{ mt: 8 }}
                     />
-                  </CustomGrid.Unit>
+                  </Box>
                 </CustomGrid>
                 <Container textAlign="right" mt={56}>
                   <Button

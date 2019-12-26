@@ -1,12 +1,12 @@
 import React from 'react';
 
 import { MainLayout } from '../layouts';
-import { Container, CustomGrid, SectionHeader, Text } from '../kits';
+import { Box, Container, CustomGrid, SectionHeader, Text } from '../kits';
 
 const FeedPage = props => (
   <MainLayout>
     <CustomGrid>
-      <CustomGrid.Unit size={{ xs: 1 / 2, sm: 1 / 3 }}>
+      <Box width={{ xs: 1 / 2, sm: 1 / 3 }}>
         <Container mr={24}>
           <SectionHeader bg="primary">
             <Text variant="body" color="lighter" textAlign="center">
@@ -19,9 +19,9 @@ const FeedPage = props => (
             </Text>
           </Container>
         </Container>
-      </CustomGrid.Unit>
+      </Box>
 
-      <CustomGrid.Unit size={{ xs: 1 / 2, sm: 1 / 3 }}>
+      <Box width={{ xs: 1 / 2, sm: 1 / 3 }}>
         <Container mr={24}>
           <SectionHeader bg="primary">
             <Text variant="body" color="lighter" textAlign="center">
@@ -34,9 +34,9 @@ const FeedPage = props => (
             </Text>
           </Container>
         </Container>
-      </CustomGrid.Unit>
+      </Box>
 
-      <CustomGrid.Unit size={{ xs: 1 / 2, sm: 1 / 3 }}>
+      <Box width={{ xs: 1 / 2, sm: 1 / 3 }}>
         <Container mr={24}>
           <SectionHeader bg="primary">
             <Text variant="body" color="lighter" textAlign="center">
@@ -49,7 +49,7 @@ const FeedPage = props => (
             </Text>
           </Container>
         </Container>
-      </CustomGrid.Unit>
+      </Box>
     </CustomGrid>
   </MainLayout>
 );

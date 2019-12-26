@@ -8,7 +8,7 @@ import { locationActions } from '../../../state/ducks/locations';
 import { madrasaActions } from '../../../state/ducks/madrasas';
 import { generateSelectOptions } from '../../../utils/select-option-utils';
 
-import { Button, Container, CustomGrid, Text } from '../../kits';
+import { Button, Box, Container, CustomGrid, Text } from '../../kits';
 import { SelectInput } from '../';
 
 class UserFormComponent extends Component {
@@ -78,7 +78,7 @@ class UserFormComponent extends Component {
       <Container>
         <Form>
           <CustomGrid>
-            <CustomGrid.Unit size={{ xs: 1, sm: 1 / 4 }}>
+            <Box width={{ xs: 1, sm: 1 / 4 }}>
               <Container pl={8} pr={8}>
                 <Text variant="caption">Blood Group</Text>
                 <SelectInput
@@ -95,9 +95,9 @@ class UserFormComponent extends Component {
                   size={{ height: 40 }}
                 />
               </Container>
-            </CustomGrid.Unit>
+            </Box>
 
-            <CustomGrid.Unit size={{ xs: 1, sm: 1 / 4 }}>
+            <Box width={{ xs: 1, sm: 1 / 4 }}>
               <Container pl={8} pr={8}>
                 <Text variant="caption">Location</Text>
                 <SelectInput
@@ -114,9 +114,9 @@ class UserFormComponent extends Component {
                   size={{ height: 40 }}
                 />
               </Container>
-            </CustomGrid.Unit>
+            </Box>
 
-            <CustomGrid.Unit size={{ xs: 1, sm: 1 / 2 }}>
+            <Box width={{ xs: 1, sm: 1 / 2 }}>
               <Container pl={8} pr={8}>
                 <Text variant="caption">Madrassa</Text>
                 <SelectInput
@@ -133,9 +133,9 @@ class UserFormComponent extends Component {
                   size={{ height: 40 }}
                 />
               </Container>
-            </CustomGrid.Unit>
+            </Box>
 
-            <CustomGrid.Unit size={{ xs: 1, sm: 1 / 4 }}>
+            <Box width={{ xs: 1, sm: 1 / 4 }}>
               <Container pl={8} pr={8}>
                 <Text variant="caption">Gender</Text>
                 <SelectInput
@@ -152,9 +152,9 @@ class UserFormComponent extends Component {
                   size={{ height: 40 }}
                 />
               </Container>
-            </CustomGrid.Unit>
+            </Box>
 
-            <CustomGrid.Unit size={{ xs: 1, sm: 1 / 4 }}>
+            <Box width={{ xs: 1, sm: 1 / 4 }}>
               <Container pl={8} pr={8}>
                 <Text variant="caption">Role</Text>
                 <SelectInput
@@ -171,9 +171,9 @@ class UserFormComponent extends Component {
                   size={{ height: 40 }}
                 />
               </Container>
-            </CustomGrid.Unit>
+            </Box>
 
-            <CustomGrid.Unit size={{ xs: 1 / 2, sm: 1 / 4 }}>
+            <Box width={{ xs: 1 / 2, sm: 1 / 4 }}>
               <Container pl={8} pr={8}>
                 <Button
                   type="submit"
@@ -184,9 +184,9 @@ class UserFormComponent extends Component {
                   Search
                 </Button>
               </Container>
-            </CustomGrid.Unit>
+            </Box>
 
-            <CustomGrid.Unit size={{ xs: 1 / 2, sm: 1 / 4 }}>
+            <Box width={{ xs: 1 / 2, sm: 1 / 4 }}>
               <Container pl={8} pr={8}>
                 <Button
                   mt={30}
@@ -196,7 +196,7 @@ class UserFormComponent extends Component {
                   Clear
                 </Button>
               </Container>
-            </CustomGrid.Unit>
+            </Box>
           </CustomGrid>
         </Form>
       </Container>

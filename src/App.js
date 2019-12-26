@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <BrowserRouter>
+        <BrowserRouter basename={window.location.pathname || ''}>
           <Routes />
         </BrowserRouter>
       </ThemeProvider>

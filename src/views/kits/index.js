@@ -1,4 +1,5 @@
 import Button from './button';
+import Box from './Box';
 import Container from './container';
 import CustomGrid from './custom-grid';
 import Devider from './devider';
@@ -13,6 +14,7 @@ import Text from './text';
 
 export {
   Button,
+  Box,
   Container,
   CustomGrid,
   Devider,
