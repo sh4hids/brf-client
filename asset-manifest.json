@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/brf-client/static/js/main.d2b723ff.chunk.js",
-    "main.js.map": "/brf-client/static/js/main.d2b723ff.chunk.js.map",
+    "main.js": "/brf-client/static/js/main.b30ee947.chunk.js",
+    "main.js.map": "/brf-client/static/js/main.b30ee947.chunk.js.map",
     "runtime-main.js": "/brf-client/static/js/runtime-main.596ad9e2.js",
     "runtime-main.js.map": "/brf-client/static/js/runtime-main.596ad9e2.js.map",
     "static/css/2.b90ce945.chunk.css": "/brf-client/static/css/2.b90ce945.chunk.css",
     "static/js/2.be453152.chunk.js": "/brf-client/static/js/2.be453152.chunk.js",
     "static/js/2.be453152.chunk.js.map": "/brf-client/static/js/2.be453152.chunk.js.map",
     "index.html": "/brf-client/index.html",
-    "precache-manifest.705ca5c9ca4d7850370b21893c8bcd8b.js": "/brf-client/precache-manifest.705ca5c9ca4d7850370b21893c8bcd8b.js",
+    "precache-manifest.0bb19cdd8cbeedd6b95b52b1214ec3b0.js": "/brf-client/precache-manifest.0bb19cdd8cbeedd6b95b52b1214ec3b0.js",
     "service-worker.js": "/brf-client/service-worker.js",
     "static/css/2.b90ce945.chunk.css.map": "/brf-client/static/css/2.b90ce945.chunk.css.map",
     "static/js/2.be453152.chunk.js.LICENSE": "/brf-client/static/js/2.be453152.chunk.js.LICENSE",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.596ad9e2.js",
     "static/css/2.b90ce945.chunk.css",
     "static/js/2.be453152.chunk.js",
-    "static/js/main.d2b723ff.chunk.js"
+    "static/js/main.b30ee947.chunk.js"
   ]
 }
