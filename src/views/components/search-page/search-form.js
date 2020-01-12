@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { withFormik, Form } from 'formik';
+import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { userActions } from '../../../state/ducks/users';
 import { locationActions } from '../../../state/ducks/locations';
 import { communityActions } from '../../../state/ducks/communities';
 import { generateSelectOptions } from '../../../utils/select-option-utils';
 
-import { Button, Box, Container, CustomGrid, Text } from '../../kits';
+import {
+  Button,
+  Box,
+  Container,
+  CustomGrid,
+  Text,
+  InputContainer,
+} from '../../kits';
 import { SelectInput } from '../';
 
 class UserFormComponent extends Component {
@@ -78,7 +85,7 @@ class UserFormComponent extends Component {
       <Container>
         <Form>
           <CustomGrid>
-            <Box width={{ xs: 1, sm: 1 / 4 }}>
+            <Box width={{ xs: 1, sm: 1 / 3 }}>
               <Container pl={8} pr={8}>
                 <Text variant="caption">Blood Group</Text>
                 <SelectInput
@@ -97,7 +104,7 @@ class UserFormComponent extends Component {
               </Container>
             </Box>
 
-            <Box width={{ xs: 1, sm: 1 / 4 }}>
+            <Box width={{ xs: 1, sm: 1 / 3 }}>
               <Container pl={8} pr={8}>
                 <Text variant="caption">Location</Text>
                 <SelectInput
@@ -116,7 +123,7 @@ class UserFormComponent extends Component {
               </Container>
             </Box>
 
-            <Box width={{ xs: 1, sm: 1 / 2 }}>
+            <Box width={{ xs: 1, sm: 1 / 3 }}>
               <Container pl={8} pr={8}>
                 <Text variant="caption">Community</Text>
                 <SelectInput
@@ -135,7 +142,25 @@ class UserFormComponent extends Component {
               </Container>
             </Box>
 
-            <Box width={{ xs: 1, sm: 1 / 4 }}>
+            <Box width={{ xs: 1, sm: 1 / 3 }}>
+              <Container pl={8} pr={8}>
+                <Text variant="caption">Mobile</Text>
+                <InputContainer mb={16} mt={8}>
+                  <Field
+                    type="text"
+                    name="mobile"
+                    placeholder="Enter mobile number"
+                  />
+                </InputContainer>
+                {touched.mobile && errors.mobile && (
+                  <Text variant="caption" color="error" mt={8} mb={8}>
+                    {errors.mobile}
+                  </Text>
+                )}
+              </Container>
+            </Box>
+
+            <Box width={{ xs: 1, sm: 1 / 3 }}>
               <Container pl={8} pr={8}>
                 <Text variant="caption">Gender</Text>
                 <SelectInput
@@ -154,7 +179,7 @@ class UserFormComponent extends Component {
               </Container>
             </Box>
 
-            <Box width={{ xs: 1, sm: 1 / 4 }}>
+            <Box width={{ xs: 1, sm: 1 / 3 }}>
               <Container pl={8} pr={8}>
                 <Text variant="caption">Role</Text>
                 <SelectInput
@@ -173,7 +198,19 @@ class UserFormComponent extends Component {
               </Container>
             </Box>
 
-            <Box width={{ xs: 1 / 2, sm: 1 / 4 }}>
+            <Box width={{ xs: 1 / 2, sm: 1 / 2 }}>
+              <Container pl={8} pr={8}>
+                <Button
+                  mt={30}
+                  className="btn-small"
+                  onClick={this.handleClearForm}
+                >
+                  Clear
+                </Button>
+              </Container>
+            </Box>
+
+            <Box width={{ xs: 1 / 2, sm: 1 / 2 }}>
               <Container pl={8} pr={8}>
                 <Button
                   type="submit"
@@ -182,18 +219,6 @@ class UserFormComponent extends Component {
                   className="btn-small"
                 >
                   Search
-                </Button>
-              </Container>
-            </Box>
-
-            <Box width={{ xs: 1 / 2, sm: 1 / 4 }}>
-              <Container pl={8} pr={8}>
-                <Button
-                  mt={30}
-                  className="btn-small"
-                  onClick={this.handleClearForm}
-                >
-                  Clear
                 </Button>
               </Container>
             </Box>
@@ -212,6 +237,7 @@ const AddUserForm = withFormik({
       selectedRole: '',
       selectedCommunity: '',
       selectedBloodGroup: '',
+      mobile: '',
     };
   },
   validationSchema: Yup.object().shape({
@@ -220,6 +246,7 @@ const AddUserForm = withFormik({
     selectedRole: Yup.object(),
     selectedCommunity: Yup.object().nullable(),
     selectedBloodGroup: Yup.object(),
+    mobile: Yup.number(),
   }),
   async handleSubmit(values, { props, setErrors, setSubmitting, resetForm }) {
     try {
@@ -230,6 +257,7 @@ const AddUserForm = withFormik({
         place: values.selectedLocation.value || '',
         gender: values.selectedGender.value || '',
         role: values.selectedRole.value || '',
+        mobile: values.mobile || '',
       };
 
       getAllUsers(token, filter);

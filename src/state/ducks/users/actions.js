@@ -26,7 +26,7 @@ export const updateUserInfo = (id, data, token) => ({
 
 export const getAllUsers = (
   token,
-  { blood_group, madrasa, place, gender, role }
+  { blood_group, community, place, gender, role, mobile }
 ) => ({
   type: types.GET_ALL_USERS,
   meta: {
@@ -34,8 +34,8 @@ export const getAllUsers = (
     blocking: true,
     path: `/persons/?blood_group=${
       blood_group ? encodeURIComponent(blood_group) : ''
-    }&madrasa=${madrasa || ''}&place=${place || ''}&gender=${gender ||
-      ''}&role=${role || ''}`,
+    }&community=${community || ''}&place=${place || ''}&gender=${gender ||
+      ''}&role=${role || ''}&mobile=${mobile || ''}`,
     method: 'GET',
     token,
   },
