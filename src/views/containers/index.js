@@ -2,7 +2,7 @@ import AddUserContainer from './add-user-container';
 import DonationContainer from './donation-container';
 import FeedContainer from './feed-container';
 import HomeContainer from './home-container';
-import MadrasaContainer from './madrasa-container';
+import CommunityContainer from './community-container';
 import SearchPageContainer from './search-page-container';
 
 export {
@@ -10,6 +10,6 @@ export {
   DonationContainer,
   FeedContainer,
   HomeContainer,
-  MadrasaContainer,
+  CommunityContainer,
   SearchPageContainer,
 };

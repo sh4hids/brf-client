@@ -71,7 +71,6 @@ const LoginForm = withFormik({
     try {
       const { login } = props;
       const { username, password } = values;
-      console.log(values);
       await login({ username, password });
 
       setSubmitting();

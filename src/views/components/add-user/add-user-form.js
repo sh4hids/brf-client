@@ -5,7 +5,7 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { userActions } from '../../../state/ducks/users';
 import { locationActions } from '../../../state/ducks/locations';
-import { madrasaActions } from '../../../state/ducks/madrasas';
+import { communityActions } from '../../../state/ducks/communities';
 import { generateSelectOptions } from '../../../utils/select-option-utils';
 
 import {
@@ -20,20 +20,20 @@ import { SelectInput, StyledDatepicker } from '../';
 
 class UserFormComponent extends Component {
   state = {
-    madrasaOptions: [],
+    communityOptions: [],
     locationOptions: [],
   };
   async componentDidMount() {
-    const { getAllLocations, getAllMadrasas, token } = this.props;
+    const { getAllLocations, getAllCommunities, token } = this.props;
 
     let locations = await getAllLocations(token);
-    let madrasas = await getAllMadrasas(token);
-    let madrasaOptions = [],
+    let communities = await getAllCommunities(token);
+    let communityOptions = [],
       locationOptions = [];
 
-    if (madrasas.count > 0) {
-      madrasaOptions = generateSelectOptions(madrasas.results);
-      this.setState({ ...this.state, madrasaOptions });
+    if (communities.count > 0) {
+      communityOptions = generateSelectOptions(communities.results);
+      this.setState({ ...this.state, communityOptions });
     }
 
     if (locations.count > 0) {
@@ -49,7 +49,7 @@ class UserFormComponent extends Component {
       selectedLocation: '',
       selectedGender: '',
       selectedRole: '',
-      selectedMadrasa: '',
+      communityOptions: '',
       selectedBloodGroup: '',
       date_of_birth: '',
       address: '',
@@ -70,7 +70,7 @@ class UserFormComponent extends Component {
       values,
     } = this.props;
 
-    const { madrasaOptions, locationOptions } = this.state;
+    const { communityOptions, locationOptions } = this.state;
 
     const genderOptions = [
       { value: 'Male', label: 'Male' },
@@ -152,17 +152,17 @@ class UserFormComponent extends Component {
 
             <Box width={1}>
               <Container pl={8} pr={8}>
-                <Text variant="caption">Madrassa</Text>
+                <Text variant="caption">Community</Text>
                 <SelectInput
                   isMulti={false}
-                  value={values.selectedMadrasa}
-                  keyName="selectedMadrasa"
+                  value={values.communityOptions}
+                  keyName="communityOptions"
                   onChange={setFieldValue}
                   onBlur={setFieldTouched}
-                  error={errors.selectedMadrasa}
-                  touched={touched.selectedMadrasa}
-                  placeholder="Select a madrassa"
-                  options={madrasaOptions}
+                  error={errors.communityOptions}
+                  touched={touched.communityOptions}
+                  placeholder="Select a community"
+                  options={communityOptions}
                   margin={{ mt: 8, mb: 16 }}
                   size={{ height: 40 }}
                 />
@@ -381,7 +381,7 @@ const AddUserForm = withFormik({
       selectedLocation: '',
       selectedGender: '',
       selectedRole: '',
-      selectedMadrasa: '',
+      communityOptions: '',
       selectedBloodGroup: '',
       date_of_birth: '',
       address: '',
@@ -397,7 +397,7 @@ const AddUserForm = withFormik({
     selectedLocation: Yup.object().required('Location is required'),
     selectedGender: Yup.object().required('Gender is required'),
     selectedRole: Yup.object().required('Role is required'),
-    selectedMadrasa: Yup.object().nullable(),
+    communityOptions: Yup.object().nullable(),
     selectedBloodGroup: Yup.object().required('Blood group is required'),
     date_of_birth: Yup.string().required('Date of birth is required'),
     address: Yup.string(),
@@ -418,7 +418,7 @@ const AddUserForm = withFormik({
       data.blood_group = values.selectedBloodGroup.value;
       data.role = values.selectedRole.value;
       data.gender = values.selectedGender.value;
-      data.madrasa = values.selectedMadrasa.value;
+      data.community = values.communityOptions.value;
       data.place = values.selectedLocation.value;
 
       if (data.date_of_birth) {
@@ -442,7 +442,6 @@ const AddUserForm = withFormik({
       } else {
         let newUser = await addUser(data, token);
         setSubmitting();
-        resetForm();
         if (newUser.id) {
           history.push('/feeds');
         }
@@ -460,7 +459,7 @@ const mapStateToProps = ({ auth }) => {
 };
 
 const mapActionsToProps = {
-  getAllMadrasas: madrasaActions.getAllMadrasas,
+  getAllCommunities: communityActions.getAllCommunities,
   getAllLocations: locationActions.getAllLocations,
   addUser: userActions.addUser,
 };

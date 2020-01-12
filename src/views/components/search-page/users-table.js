@@ -11,7 +11,7 @@ const UsersTable = ({ users }) => (
       <thead>
         <tr>
           <th className="text">Name</th>
-          <th className="text">Madrasa</th>
+          <th className="text">Community</th>
           <th className="text-centered">Phone</th>
           <th className="text-centered">Blood Group</th>
           <th className="number">Last Donated</th>
@@ -22,7 +22,9 @@ const UsersTable = ({ users }) => (
           return user.id ? (
             <tr key={user.id}>
               <td className="text">{user.name}</td>
-              <td className="text">{user.madrasa ? user.madrasa.name : '-'}</td>
+              <td className="text">
+                {user.community ? user.community.name : '-'}
+              </td>
               <td className="text-centered">{user.mobile || '-'}</td>
               <td className="text-centered">{user.blood_group}</td>
               <td className="number">

@@ -3,14 +3,19 @@ import { connect } from 'react-redux';
 import { FeedPage } from '../pages';
 import { userActions } from '../../state/ducks/users';
 import { donationActions } from '../../state/ducks/donations';
-import { madrasaActions } from '../../state/ducks/madrasas';
+import { communityActions } from '../../state/ducks/communities';
 
 class FeedContainer extends Component {
   async componentDidMount() {
-    const { getAllUsers, getAllRequests, getAllMadrasas, token } = this.props;
+    const {
+      getAllUsers,
+      getAllRequests,
+      getAllCommunities,
+      token,
+    } = this.props;
     await getAllUsers(token, {});
     await getAllRequests(token);
-    await getAllMadrasas(token);
+    await getAllCommunities(token);
   }
 
   render() {
@@ -18,11 +23,11 @@ class FeedContainer extends Component {
   }
 }
 
-const mapStateToProps = ({ auth, users, donations, madrasas }) => {
+const mapStateToProps = ({ auth, users, donations, communities }) => {
   return {
     token: auth.token,
     users: users.users,
-    madrasas: madrasas.madrasas,
+    communities: communities.communities,
     donationRequests: donations.donationRequests,
   };
 };
@@ -30,7 +35,7 @@ const mapStateToProps = ({ auth, users, donations, madrasas }) => {
 const mapActionsToProps = {
   getAllUsers: userActions.getAllUsers,
   getAllRequests: donationActions.getAllRequests,
-  getAllMadrasas: madrasaActions.getAllMadrasas,
+  getAllCommunities: communityActions.getAllCommunities,
 };
 
 export default connect(

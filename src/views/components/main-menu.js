@@ -108,8 +108,8 @@ const MainMenu = ({ logout }) => (
         </NavLink>
       </MenuItem>
       <MenuItem>
-        <NavLink to="/madrasas">
-          <DomainIcon className="menu-mdi" /> Madrasas
+        <NavLink to="/communities">
+          <DomainIcon className="menu-mdi" /> Communities
         </NavLink>
       </MenuItem>
       {/* <MenuItem>

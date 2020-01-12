@@ -25,12 +25,12 @@ const FeedPage = props => (
         <Container mr={24}>
           <SectionHeader bg="primary">
             <Text variant="body" color="lighter" textAlign="center">
-              Total Madrasas
+              Total Communities
             </Text>
           </SectionHeader>
           <Container variant="card" p={24}>
             <Text textAlign="center" variant="44">
-              {props.madrasas.count || 0}
+              {props.communities.count || 0}
             </Text>
           </Container>
         </Container>

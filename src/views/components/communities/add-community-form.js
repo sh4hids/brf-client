@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import { locationActions } from '../../../state/ducks/locations';
-import { madrasaActions } from '../../../state/ducks/madrasas';
+import { communityActions } from '../../../state/ducks/communities';
 import { generateSelectOptions } from '../../../utils/select-option-utils';
 
 import {
@@ -61,7 +61,7 @@ class UserFormComponent extends Component {
           <CustomGrid>
             <Box width={{ xs: 1, sm: 1 }}>
               <Container pl={8} pr={8}>
-                <Text variant="caption">Madrasa Name</Text>
+                <Text variant="caption">Community Name</Text>
                 <InputContainer mb={16} mt={8}>
                   <Field type="text" name="name" placeholder="Enter fullname" />
                 </InputContainer>
@@ -161,7 +161,7 @@ class UserFormComponent extends Component {
             <Box width={{ xs: 1 / 2, sm: 1 / 2 }}>
               <Container pl={8} pr={8}>
                 <Button type="submit" variant="primary" mt={24}>
-                  Add Madrasa
+                  Add Community
                 </Button>
               </Container>
             </Box>
@@ -183,7 +183,7 @@ const AddUserForm = withFormik({
     };
   },
   validationSchema: Yup.object().shape({
-    name: Yup.string().required('Madrasa name is required'),
+    name: Yup.string().required('Community name is required'),
     selectedLocation: Yup.object().required('Location is required'),
     address: Yup.string().required('Adress is required'),
     phone: Yup.string(),
@@ -191,21 +191,19 @@ const AddUserForm = withFormik({
   }),
   async handleSubmit(values, { props, setErrors, setSubmitting, resetForm }) {
     try {
-      const { addMadrasa, token, history } = props;
+      const { addCommunity, token, history } = props;
       let data = values;
 
       data.place = values.selectedLocation.value;
 
-      let newMadrasa = await addMadrasa(data, token);
+      let newCommunity = await addCommunity(data, token);
       setSubmitting();
-      resetForm();
-      if (newMadrasa.id) {
+      if (newCommunity.id) {
         history.push('/feeds');
       }
     } catch (err) {
       console.log(err);
     }
-    setSubmitting();
   },
 })(UserFormComponent);
 
@@ -216,8 +214,8 @@ const mapStateToProps = ({ auth }) => {
 };
 
 const mapActionsToProps = {
-  addMadrasa: madrasaActions.addMadrasa,
-  getAllMadrasas: madrasaActions.getAllMadrasas,
+  addCommunity: communityActions.addCommunity,
+  getAllCommunities: communityActions.getAllCommunities,
   getAllLocations: locationActions.getAllLocations,
 };
 

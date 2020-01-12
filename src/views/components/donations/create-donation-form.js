@@ -259,7 +259,6 @@ const CreateDonationForm = withFormik({
     } catch (err) {
       console.log(err);
     }
-    setSubmitting();
   },
 })(CreateDonationFormComponent);
 

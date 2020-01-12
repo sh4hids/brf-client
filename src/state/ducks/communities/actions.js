@@ -1,23 +1,23 @@
 import * as types from './types';
 
-export const addMadrasa = (data, token) => ({
-  type: types.ADD_MADRASA,
+export const addCommunity = (data, token) => ({
+  type: types.ADD_COMMUNITY,
   meta: {
     async: true,
     blocking: true,
-    path: `/madrasas/`,
+    path: `/communities/`,
     method: 'POST',
     body: data,
     token,
   },
 });
 
-export const getAllMadrasas = token => ({
-  type: types.GET_ALL_MADRASAS,
+export const getAllCommunities = token => ({
+  type: types.GET_ALL_COMMUNITIES,
   meta: {
     async: true,
     blocking: true,
-    path: `/madrasas/`,
+    path: `/communities/`,
     method: 'GET',
     token,
   },

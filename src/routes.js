@@ -5,7 +5,7 @@ import {
   DonationContainer,
   FeedContainer,
   HomeContainer,
-  MadrasaContainer,
+  CommunityContainer,
   SearchPageContainer,
 } from './views/containers';
 import { NotFoundPage } from './views/pages';
@@ -16,7 +16,7 @@ const Routes = () => (
     <Route exact path="/" component={HomeContainer} />
     <Route exact path="/feeds" component={withAuth(FeedContainer)} />
     <Route exact path="/add-user" component={withAuth(AddUserContainer)} />
-    <Route exact path="/madrasas" component={withAuth(MadrasaContainer)} />
+    <Route exact path="/communities" component={withAuth(CommunityContainer)} />
     <Route exact path="/search" component={withAuth(SearchPageContainer)} />
     <Route
       exact

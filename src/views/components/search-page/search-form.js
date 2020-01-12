@@ -5,7 +5,7 @@ import { withFormik, Form } from 'formik';
 import * as Yup from 'yup';
 import { userActions } from '../../../state/ducks/users';
 import { locationActions } from '../../../state/ducks/locations';
-import { madrasaActions } from '../../../state/ducks/madrasas';
+import { communityActions } from '../../../state/ducks/communities';
 import { generateSelectOptions } from '../../../utils/select-option-utils';
 
 import { Button, Box, Container, CustomGrid, Text } from '../../kits';
@@ -13,20 +13,20 @@ import { SelectInput } from '../';
 
 class UserFormComponent extends Component {
   state = {
-    madrasaOptions: [],
+    communityOptions: [],
     locationOptions: [],
   };
   async componentDidMount() {
-    const { getAllLocations, getAllMadrasas, token } = this.props;
+    const { getAllLocations, getAllCommunities, token } = this.props;
 
     let locations = await getAllLocations(token);
-    let madrasas = await getAllMadrasas(token);
-    let madrasaOptions = [],
+    let communities = await getAllCommunities(token);
+    let communityOptions = [],
       locationOptions = [];
 
-    if (madrasas.count > 0) {
-      madrasaOptions = generateSelectOptions(madrasas.results);
-      this.setState({ ...this.state, madrasaOptions });
+    if (communities.count > 0) {
+      communityOptions = generateSelectOptions(communities.results);
+      this.setState({ ...this.state, communityOptions });
     }
 
     if (locations.count > 0) {
@@ -50,7 +50,7 @@ class UserFormComponent extends Component {
       values,
     } = this.props;
 
-    const { madrasaOptions, locationOptions } = this.state;
+    const { communityOptions, locationOptions } = this.state;
 
     const genderOptions = [
       { value: 'Male', label: 'Male' },
@@ -118,17 +118,17 @@ class UserFormComponent extends Component {
 
             <Box width={{ xs: 1, sm: 1 / 2 }}>
               <Container pl={8} pr={8}>
-                <Text variant="caption">Madrassa</Text>
+                <Text variant="caption">Community</Text>
                 <SelectInput
                   isMulti={false}
-                  value={values.selectedMadrasa}
-                  keyName="selectedMadrasa"
+                  value={values.selectedCommunity}
+                  keyName="selectedCommunity"
                   onChange={setFieldValue}
                   onBlur={setFieldTouched}
-                  error={errors.selectedMadrasa}
-                  touched={touched.selectedMadrasa}
-                  placeholder="Select a madrassa"
-                  options={madrasaOptions}
+                  error={errors.selectedCommunity}
+                  touched={touched.selectedCommunity}
+                  placeholder="Select a community"
+                  options={communityOptions}
                   margin={{ mt: 8, mb: 16 }}
                   size={{ height: 40 }}
                 />
@@ -210,7 +210,7 @@ const AddUserForm = withFormik({
       selectedLocation: '',
       selectedGender: '',
       selectedRole: '',
-      selectedMadrasa: '',
+      selectedCommunity: '',
       selectedBloodGroup: '',
     };
   },
@@ -218,7 +218,7 @@ const AddUserForm = withFormik({
     selectedLocation: Yup.object(),
     selectedGender: Yup.object(),
     selectedRole: Yup.object(),
-    selectedMadrasa: Yup.object().nullable(),
+    selectedCommunity: Yup.object().nullable(),
     selectedBloodGroup: Yup.object(),
   }),
   async handleSubmit(values, { props, setErrors, setSubmitting, resetForm }) {
@@ -226,7 +226,7 @@ const AddUserForm = withFormik({
       const { getAllUsers, token } = props;
       let filter = {
         blood_group: values.selectedBloodGroup.value || '',
-        madrasa: values.selectedMadrasa.value || '',
+        community: values.selectedCommunity.value || '',
         place: values.selectedLocation.value || '',
         gender: values.selectedGender.value || '',
         role: values.selectedRole.value || '',
@@ -238,7 +238,6 @@ const AddUserForm = withFormik({
     } catch (err) {
       console.log(err);
     }
-    setSubmitting();
   },
 })(UserFormComponent);
 
@@ -249,7 +248,7 @@ const mapStateToProps = ({ auth }) => {
 };
 
 const mapActionsToProps = {
-  getAllMadrasas: madrasaActions.getAllMadrasas,
+  getAllCommunities: communityActions.getAllCommunities,
   getAllLocations: locationActions.getAllLocations,
   getAllUsers: userActions.getAllUsers,
 };

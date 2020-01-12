@@ -3,7 +3,7 @@ import AddUserPage from './add-user-page';
 import DonationPage from './donation-page';
 import FeedPage from './feed-page';
 import HomePage from './home-page';
-import MadrasaPage from './madrasa-page';
+import CommpunityPage from './community-page';
 import SearchPage from './search-page';
 
 export {
@@ -11,7 +11,7 @@ export {
   DonationPage,
   FeedPage,
   HomePage,
-  MadrasaPage,
+  CommpunityPage,
   NotFoundPage,
   SearchPage,
 };
