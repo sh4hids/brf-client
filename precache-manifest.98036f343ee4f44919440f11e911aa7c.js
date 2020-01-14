@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "bbaf3638d15eacdaa11df255b29ebafe",
+    "revision": "01c62590c1ec76d17c673bf0913023a3",
     "url": "/brf-client/index.html"
   },
   {
-    "revision": "66640dc71aecd3922575",
+    "revision": "4d03fdb30e87f9051af0",
     "url": "/brf-client/static/css/2.b90ce945.chunk.css"
   },
   {
-    "revision": "66640dc71aecd3922575",
-    "url": "/brf-client/static/js/2.f61f4a95.chunk.js"
+    "revision": "4d03fdb30e87f9051af0",
+    "url": "/brf-client/static/js/2.51d36d63.chunk.js"
   },
   {
     "revision": "d1550ec930b0ddcf4886a70f53c49fee",
-    "url": "/brf-client/static/js/2.f61f4a95.chunk.js.LICENSE"
+    "url": "/brf-client/static/js/2.51d36d63.chunk.js.LICENSE"
   },
   {
-    "revision": "bebc4c789da13e633678",
-    "url": "/brf-client/static/js/main.b957d0aa.chunk.js"
+    "revision": "7da051ee31d71f21a32a",
+    "url": "/brf-client/static/js/main.0807cb2f.chunk.js"
   },
   {
     "revision": "8ed9369df2d699ad3035",
