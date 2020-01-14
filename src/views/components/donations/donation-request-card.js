@@ -33,7 +33,7 @@ const DonationRequestCard = ({ request, showDevider }) => {
     <Fragment>
       <Text>
         <StyledText fontWeight="bold">{request.receiver.name}</StyledText>{' '}
-        requested for
+        requested for{' '}
         <StyledText fontWeight="bold">
           {request.receiver.blood_group}
         </StyledText>{' '}

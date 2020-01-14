@@ -35,7 +35,7 @@
     "predeploy": "npm run build"
   },
   "proxy": "http://localhost:8000/",
-  "homepage": "http://apps.shahid.pro/brf-client",
+  "homepage": "http://cbdd.brfbd.org",
   "eslintConfig": {
     "extends": "react-app"
   },
