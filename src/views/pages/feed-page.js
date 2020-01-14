@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { MainLayout } from '../layouts';
 import { Box, Container, CustomGrid, SectionHeader, Text } from '../kits';
@@ -8,11 +9,13 @@ const FeedPage = props => (
     <CustomGrid>
       <Box width={{ xs: 1 / 2, sm: 1 / 3 }}>
         <Container mr={24}>
-          <SectionHeader bg="primary">
-            <Text variant="body" color="lighter" textAlign="center">
-              Total Users
-            </Text>
-          </SectionHeader>
+          <Link to="/search">
+            <SectionHeader bg="primary">
+              <Text variant="body" color="lighter" textAlign="center">
+                Total Users
+              </Text>
+            </SectionHeader>
+          </Link>
           <Container variant="card" p={24}>
             <Text textAlign="center" variant="44">
               {props.users.count || 0}
@@ -23,11 +26,13 @@ const FeedPage = props => (
 
       <Box width={{ xs: 1 / 2, sm: 1 / 3 }}>
         <Container mr={24}>
-          <SectionHeader bg="primary">
-            <Text variant="body" color="lighter" textAlign="center">
-              Total Communities
-            </Text>
-          </SectionHeader>
+          <Link to="/communities">
+            <SectionHeader bg="primary">
+              <Text variant="body" color="lighter" textAlign="center">
+                Total Communities
+              </Text>
+            </SectionHeader>
+          </Link>
           <Container variant="card" p={24}>
             <Text textAlign="center" variant="44">
               {props.communities.count || 0}
@@ -38,11 +43,13 @@ const FeedPage = props => (
 
       <Box width={{ xs: 1 / 2, sm: 1 / 3 }}>
         <Container mr={24}>
-          <SectionHeader bg="primary">
-            <Text variant="body" color="lighter" textAlign="center">
-              Total Requests
-            </Text>
-          </SectionHeader>
+          <Link to="/blood-requests">
+            <SectionHeader bg="primary">
+              <Text variant="body" color="lighter" textAlign="center">
+                Total Requests
+              </Text>
+            </SectionHeader>
+          </Link>
           <Container variant="card" p={24}>
             <Text textAlign="center" variant="44">
               {props.donationRequests.count || 0}

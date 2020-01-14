@@ -72,20 +72,18 @@ class RequestDetailsContent extends Component {
       <Fragment>
         {requestDetails.receiver ? (
           <Container width={560}>
-            <Text variant="h5" color="primary">
-              {requestDetails.receiver.name}
-            </Text>
+            <Text variant="h5">{requestDetails.receiver.name}</Text>
             <Devider />
 
             <Text mb={8}>
               Blood Group:{' '}
-              <StyledText color="primary" fontWeight={700}>
+              <StyledText fontWeight={700}>
                 {requestDetails.receiver.blood_group}
               </StyledText>
             </Text>
             <Text mb={8}>
               Request Date:{' '}
-              <StyledText color="primary" fontWeight={700}>
+              <StyledText fontWeight={700}>
                 {format(
                   new Date(requestDetails.request_date),
                   'MMMM dd, yyyy',
@@ -95,15 +93,13 @@ class RequestDetailsContent extends Component {
             </Text>
             <Text mb={8}>
               Address:{' '}
-              <StyledText color="primary" fontWeight={700}>
+              <StyledText fontWeight={700}>
                 {requestDetails.receiver.address || 'Not mentioned'}
               </StyledText>
             </Text>
             <Devider />
             <Text mb={8}>Reason:</Text>
-            <Text color="primary">
-              {requestDetails.reason || 'Not mentioned'}
-            </Text>
+            <Text>{requestDetails.reason || 'Not mentioned'}</Text>
             <Devider />
             {requestDetails.is_served ? (
               <>

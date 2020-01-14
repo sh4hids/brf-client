@@ -44,6 +44,10 @@ const GlobalStyle = createGlobalStyle`
   :not(pre) > code[class*="language-"], pre[class*="language-"] {
     background-color: #f0f8fb;
   }
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 export default GlobalStyle;

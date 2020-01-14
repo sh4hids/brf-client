@@ -204,6 +204,7 @@ class UserFormComponent extends Component {
                   mt={30}
                   className="btn-small"
                   onClick={this.handleClearForm}
+                  type="button"
                 >
                   Clear
                 </Button>
