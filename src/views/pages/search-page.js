@@ -8,7 +8,7 @@ const SearchPage = ({ users, userMessage }) => (
     <Container variant="card" p={24} mb={24}>
       <SearchForm />
     </Container>
-    <Container variant="card">
+    <Container variant="card" overflowX="auto">
       {users.count ? (
         <UsersTable users={users} />
       ) : (

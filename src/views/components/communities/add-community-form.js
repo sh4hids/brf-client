@@ -56,7 +56,7 @@ class UserFormComponent extends Component {
     const { locationOptions } = this.state;
 
     return (
-      <Container width={600} m="0 auto">
+      <Container width={{ xs: '100%', sm: 600 }} m="0 auto">
         <Form>
           <CustomGrid>
             <Box width={{ xs: 1, sm: 1 }}>

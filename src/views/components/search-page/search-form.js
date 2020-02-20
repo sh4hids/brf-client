@@ -98,7 +98,7 @@ class UserFormComponent extends Component {
                   touched={touched.selectedBloodGroup}
                   placeholder="Select a group"
                   options={bloodGroups}
-                  margin={{ mt: 8 }}
+                  margin={{ mt: 8, mb: 16 }}
                   size={{ height: 40 }}
                 />
               </Container>

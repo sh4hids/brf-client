@@ -7,8 +7,8 @@ import { Box, Container, CustomGrid, SectionHeader, Text } from '../kits';
 const FeedPage = props => (
   <MainLayout>
     <CustomGrid>
-      <Box width={{ xs: 1 / 2, sm: 1 / 3 }}>
-        <Container mr={24}>
+      <Box width={{ xs: 1, sm: 1 / 3 }}>
+        <Container mr={{ xs: 0, sm: 24 }} mb={{ xs: 24, sm: 0 }}>
           <Link to="/search">
             <SectionHeader bg="primary">
               <Text variant="body" color="lighter" textAlign="center">
@@ -24,8 +24,8 @@ const FeedPage = props => (
         </Container>
       </Box>
 
-      <Box width={{ xs: 1 / 2, sm: 1 / 3 }}>
-        <Container mr={24}>
+      <Box width={{ xs: 1, sm: 1 / 3 }}>
+        <Container mr={{ xs: 0, sm: 24 }} mb={{ xs: 24, sm: 0 }}>
           <Link to="/communities">
             <SectionHeader bg="primary">
               <Text variant="body" color="lighter" textAlign="center">
@@ -41,8 +41,8 @@ const FeedPage = props => (
         </Container>
       </Box>
 
-      <Box width={{ xs: 1 / 2, sm: 1 / 3 }}>
-        <Container mr={24}>
+      <Box width={{ xs: 1, sm: 1 / 3 }}>
+        <Container mr={{ xs: 0, sm: 24 }} mb={{ xs: 24, sm: 0 }}>
           <Link to="/blood-requests">
             <SectionHeader bg="primary">
               <Text variant="body" color="lighter" textAlign="center">

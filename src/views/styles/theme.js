@@ -1,4 +1,11 @@
+const breakpoints = ['40em', '52em', '64em', '80em'];
+breakpoints.sm = breakpoints[0];
+breakpoints.md = breakpoints[1];
+breakpoints.lg = breakpoints[2];
+breakpoints.xl = breakpoints[3];
+
 export default {
+  breakpoints,
   borders: {
     primary: '1px solid #FF7275',
     light: '1px solid #E9EBEC',
@@ -70,5 +77,4 @@ export default {
     placeholder: '#A9AEB1',
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256],
-  breakpoints: [0, '576px', '768px', '992px', '1200px'],
 };

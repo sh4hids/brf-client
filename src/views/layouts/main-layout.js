@@ -4,7 +4,7 @@ import { MainMenu } from '../components';
 import { Container } from '../kits';
 
 const MainLayout = ({ children }) => (
-  <Container pl={280}>
+  <Container pl={[0, 280, 280, 280]}>
     <GlobalStyle />
     <MainMenu />
     <Container p={24}>{children}</Container>

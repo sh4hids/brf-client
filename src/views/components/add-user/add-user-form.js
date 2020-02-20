@@ -95,7 +95,7 @@ class UserFormComponent extends Component {
     ];
 
     return (
-      <Container width={600} m="0 auto">
+      <Container width={{ xs: '100%', sm: 600 }} m="0 auto">
         <Form>
           <CustomGrid>
             <Box width={1}>
@@ -144,7 +144,7 @@ class UserFormComponent extends Component {
                   touched={touched.selectedBloodGroup}
                   placeholder="Select a group"
                   options={bloodGroups}
-                  margin={{ mt: 8 }}
+                  margin={{ mt: 8, mb: 16 }}
                   size={{ height: 40 }}
                 />
               </Container>
@@ -185,7 +185,7 @@ class UserFormComponent extends Component {
                   dropdownMode="select"
                   dateFormat="dd/MM/yyyy"
                   className="date-picker"
-                  margin={{ mt: 8 }}
+                  margin={{ mt: 8, mb: 16 }}
                 />
               </Container>
             </Box>

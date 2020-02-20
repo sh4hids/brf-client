@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { color, height, width, space, textAlign } from 'styled-system';
+import { color, height, width, space, textAlign, layout } from 'styled-system';
 
 const Container = styled.div`
   ${({ variant }) =>
@@ -20,6 +20,7 @@ const Container = styled.div`
   ${height};
   ${width};
   ${textAlign};
+  ${layout};
 `;
 
 export default Container;

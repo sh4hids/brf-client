@@ -10,8 +10,9 @@ import HomeIcon from 'mdi-react/HomeIcon';
 import HospitalIcon from 'mdi-react/HospitalIcon';
 import LogoutVariantIcon from 'mdi-react/LogoutVariantIcon';
 import MagnifyIcon from 'mdi-react/MagnifyIcon';
+import { Container } from '../kits';
 
-const MenuContainer = styled.div`
+const MenuContainer = styled(Container)`
   width: 280px;
   height: 100vh;
   position: fixed;
@@ -82,7 +83,7 @@ const MenuItem = styled.li`
 `;
 
 const MainMenu = ({ logout }) => (
-  <MenuContainer>
+  <MenuContainer display={['none', 'block', 'block', 'block']}>
     <ul>
       <MenuItem variant="primary">
         <NavLink to="/">BRF Blood Bank Database</NavLink>
@@ -131,7 +132,4 @@ const mapActionsToProps = {
   logout: authActions.logout,
 };
 
-export default connect(
-  null,
-  mapActionsToProps
-)(MainMenu);
+export default connect(null, mapActionsToProps)(MainMenu);
