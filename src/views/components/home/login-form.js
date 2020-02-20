@@ -12,7 +12,7 @@ class LoginFormComponent extends Component {
 
     return (
       <Form>
-        <Container variant="card" p={24} maxWidth={320}>
+        <Container mt={[-72, 0, 0, 0]} variant="card" p={24} maxWidth={320}>
           <InputContainer
             border="none"
             borderBottom="1px solid #FF7275"
@@ -91,7 +91,4 @@ const mapActionsToProps = {
   login: authActions.login,
 };
 
-export default connect(
-  mapStateToProps,
-  mapActionsToProps
-)(LoginForm);
+export default connect(mapStateToProps, mapActionsToProps)(LoginForm);
