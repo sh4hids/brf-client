@@ -9,7 +9,7 @@ import {
 } from 'styled-system';
 
 const InputContainer = styled.div`
-  padding: 8px 16px;
+  padding: 5px 16px;
   border-radius: 4px;
   border: ${({ theme }) => theme.borders.primary};
   border-color: ${({ theme }) => theme.colors.primary};

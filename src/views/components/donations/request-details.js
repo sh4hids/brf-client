@@ -71,7 +71,7 @@ class RequestDetailsContent extends Component {
     return (
       <Fragment>
         {requestDetails.receiver ? (
-          <Container width={560}>
+          <Container width={['100%', 560, 560, 560]} pt={[16, 0, 0, 0]}>
             <Text variant="h5">{requestDetails.receiver.name}</Text>
             <Devider />
 
@@ -246,7 +246,4 @@ const mapActionsToProps = {
   updateUserInfo: userActions.updateUserInfo,
 };
 
-export default connect(
-  mapStateToProps,
-  mapActionsToProps
-)(RequestDetails);
+export default connect(mapStateToProps, mapActionsToProps)(RequestDetails);

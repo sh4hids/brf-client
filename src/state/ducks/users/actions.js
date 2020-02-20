@@ -43,7 +43,7 @@ export const getAllUsers = (
 
 export const getEligibleDonors = (
   token,
-  { blood_group, madrasa, place, gender, role, mobile }
+  { blood_group, community, place, gender, role, mobile }
 ) => ({
   type: types.GET_ELIGIBLE_DONORS,
   meta: {
@@ -51,7 +51,7 @@ export const getEligibleDonors = (
     blocking: true,
     path: `/persons/eligible_donors/?blood_group=${
       blood_group ? encodeURIComponent(blood_group) : ''
-    }&madrasa=${madrasa || ''}&place=${place || ''}&gender=${gender ||
+    }&community=${community || ''}&place=${place || ''}&gender=${gender ||
       ''}&role=${role || ''}&mobile=${mobile}`,
     method: 'GET',
     token,

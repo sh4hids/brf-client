@@ -100,7 +100,7 @@ class CreateDonationFormComponent extends Component {
     const { userOptions } = this.state;
 
     return (
-      <Container>
+      <Container pt={[16, 0, 0, 0]}>
         <Form>
           <CustomGrid>
             <Box width={{ xs: 1, sm: 1 / 3 }}>
@@ -134,6 +134,7 @@ class CreateDonationFormComponent extends Component {
                   variant="primary"
                   type="button"
                   mt={28}
+                  mb={[16, 0, 0, 0]}
                   className="btn-small"
                   onClick={this.handleOpenModal}
                 >

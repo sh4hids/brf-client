@@ -12,7 +12,7 @@ class LoginFormComponent extends Component {
 
     return (
       <Form>
-        <Container mt={[-72, 0, 0, 0]} variant="card" p={24} maxWidth={320}>
+        <Container mt={[-96, 0, 0, 0]} variant="card" p={24} maxWidth={320}>
           <InputContainer
             border="none"
             borderBottom="1px solid #FF7275"

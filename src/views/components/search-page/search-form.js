@@ -279,7 +279,7 @@ const mapStateToProps = ({ auth }) => {
 const mapActionsToProps = {
   getAllCommunities: communityActions.getAllCommunities,
   getAllLocations: locationActions.getAllLocations,
-  getAllUsers: userActions.getAllUsers,
+  getAllUsers: userActions.getEligibleDonors,
 };
 
 export default connect(

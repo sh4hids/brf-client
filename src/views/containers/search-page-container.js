@@ -11,12 +11,14 @@ class SearchPageContainer extends Component {
   }
 
   render() {
-    const { users } = this.props;
+    const { eligibleDonors } = this.props;
 
     return (
       <SearchPage
-        users={users}
-        userMessage={users.count === 0 ? 'No user found' : 'Loading...'}
+        users={eligibleDonors}
+        userMessage={
+          eligibleDonors.count === 0 ? 'No user found' : 'Loading...'
+        }
       />
     );
   }
@@ -30,10 +32,7 @@ const mapStateToProps = ({ auth, users }) => {
 };
 
 const mapActionsToProps = {
-  getAllUsers: userActions.getAllUsers,
+  getAllUsers: userActions.getEligibleDonors,
 };
 
-export default connect(
-  mapStateToProps,
-  mapActionsToProps
-)(SearchPageContainer);
+export default connect(mapStateToProps, mapActionsToProps)(SearchPageContainer);
