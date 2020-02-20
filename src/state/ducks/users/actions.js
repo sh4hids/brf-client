@@ -49,10 +49,10 @@ export const getEligibleDonors = (
   meta: {
     async: true,
     blocking: true,
-    path: `/persons/eligible_donors/?blood_group=${
+    path: `/persons/eligible-donors/?blood_group=${
       blood_group ? encodeURIComponent(blood_group) : ''
     }&community=${community || ''}&place=${place || ''}&gender=${gender ||
-      ''}&role=${role || ''}&mobile=${mobile}`,
+      ''}&role=${role || ''}&mobile__icontains=${mobile || ''}`,
     method: 'GET',
     token,
   },
